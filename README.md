@@ -11,3 +11,5 @@ It basically converts series of points to a combination of various frequencies o
 * To find svgs of different shapes and things go to https://www.svgrepo.com/ .
 * Click on edit vector and select small thickness.
 * Click on copy svg to copy the svg and paste it into coordinator to get it's co-oridnates.
+
+> https://devnev39.github.io/Fourier
