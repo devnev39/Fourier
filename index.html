@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fourier Examples</title>
+</head>
+<body>
+    <div class="row mt-1">
+        <div class="col-4">
+            <canvas id="drawingCanvas" height="500" width="500">
+
+            </canvas>
+            <div class="d-flex justify-content-center">
+                <button id="clearDrawingButton" class="btn btn-danger" onclick="clearDrawingCanvas()" disabled>Clear</button>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+                <strong>OR</strong>
+            </div>
+            <div class="d-flex justify-content-center">
+                Upload JSON containg points [[x,y],...]
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="https://spotify.github.io/coordinator/" target="_blank">https://spotify.github.io/coordinator/</a>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="/help.html" target="_blank">Steps to generate points from svg</a>
+            </div>
+            <div class="row m-3">
+                <div class="col-5">
+                    <div class="d-flex justify-content-center">
+                        <textarea id="oridnate-input" onchange="ordinatesChanged(this)" placeholder="JSON copy as text. Press tab afterwards !" rows="4" cols="10"></textarea>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="d-flex justify-content-center">
+                        OR
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="d-flex justify-content-center">
+                        <input id="file-input" onchange="fileUploaded(this)" type="file" placeholder="json file" accept=".json">
+                    </div>  
+                    <div class="d-flex justify-content-center mt-4">
+                        <button class="btn btn-primary" onclick="startTransform()">Transform</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-8">
+            <div id="myCanvas" class="ms-5">
+
+            </div>
+            <div id="transform-control">
+                <label for="kf-control">Added frequencies : </label>
+                <input oninput="kfChanged(this)" id="kf-control" name="kf-control" type="range" step="1" min="1">
+                <label id="kf-control-label"></label>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="src/fourier.js"></script>
+    <script src="src/index.js"/>
+    <!-- <script src="stage1.js" /> -->
+</body>
+</html>
